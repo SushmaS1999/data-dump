@@ -23,34 +23,117 @@ db.settings({
 
 let data = [];
 data[collectionName] = {};
-console.log("fh", startDate, endDate);
+// console.log("fh", startDate, endDate);
 let dateStart = moment(startDate, "YYYY-MM-DD")
   .startOf("day")
   .format("x"),
   dateEnd = moment(endDate, "YYYY-MM-DD").endOf("day").format("x");
-console.log(typeof dateStart, typeof dateEnd, ServiceAccountfileName, collectionName, fileName);
+// console.log(typeof dateStart, typeof dateEnd, ServiceAccountfileName, collectionName, fileName);
 // let dateStart= startDate,
 //   dateEnd =enDate;
+console.log(dateStart, dateEnd)
 let results = db.collection(collectionName)
   // .where("timeStamp", "<=", "1630434599999")
 
-  // // order
+  // order
   // .where("createdAt", ">=", parseInt(dateStart))
   // .where("createdAt", "<=", parseInt(dateEnd))
+  // .where("created_on", ">=", dateStart)
+  // .where("created_on", "<=", dateEnd)
   // // PROCUREMENT
-  // .where("timeStamp", ">=", dateStart)
-  // .where("timeStamp", "<=", dateEnd)
+  .where("invoiceAt", ">=", dateStart)
+  .where("invoiceAt", "<=", dateEnd)
   .get()
   .then(snapshot => {
     snapshot.forEach(doc => {
       data.push({
         id: doc.id,
+        // slugDate:doc.id,
         ...doc.data()
       });
     })
-    data.forEach(dt => {
-      dt.dcName = dcName
+    data.forEach((dt, k) => {
+      dt.dcName = dcName;
+    //   let dd;
+    //   if (dcName = "YLK") {
+    //     dd = "001"
+    //   } else if (dcName = "MDY") {
+    //     dd = "002"
+    //
+    //   } else if (dcName = "CBP") {
+    //     dd = "003"
+    //
+    //   } else if (dcName = "RMG") {
+    //     dd = "005"
+    //
+    //   } else if (dcName = "MYS") {
+    //     dd = "006"
+    //
+    //   } else if (dcName = "KLR") {
+    //     dd = "007"
+    //
+    //   } else if (dcName = "MDG") {
+    //     dd = "008"
+    //
+    //   } else if (dcName = "GDS") {
+    //     dd = "009"
+    //
+    //   } else if (dcName = "BGK") {
+    //     dd = "010"
+    //
+    //   } else if (dcName = "HBL") {
+    //     dd = "002"
+    //
+    //   } else if (dcName = "HSP") {
+    //     dd = "011"
+    //
+    //   } else if (dcName = "ANP") {
+    //     dd = "011"
+    //
+    //   } else if (dcName = "HVR") {
+    //     dd = "011"
+    //
+    //   } else if (dcName = "DRG") {
+    //     dd = "011"
+    //
+    //   } else if (dcName = "BLGM") {
+    //     dd = "011"
+    //
+    //   } else if (dcName = "KDG") {
+    //     dd = "011"
+    //
+    //   } else if (dcName = "BJPR") {
+    //     dd = "015"
+    //
+    //   } else if (dcName = "HMN") {
+    //     dd = "015"
+    //
+    //   } else if (dcName = "MLG") {
+    //     dd = "010"
+    //
+    //   } else if (dcName = "KRGR") {
+    //     dd = "010"
+    //
+    //   } else if (dcName = "SMG") {
+    //     dd = "001"
+    //
+    //   } else if (dcName = "MGL") {
+    //     dd = "002"
+    //
+    //   } else if (dcName = "SNR") {
+    //     dd = "021"
+    //
+    //   } else if (dcName = "CMG") {
+    //     dd = "011"
+    //
+    //   }
+      // dt['customer_code'] = "007" + "0000" + (k + 1);
+      // delete dt._id;
     })
+    // let allCust = _.sortBy(cust, 'created_on');
+    //       _.each(allCust, function(v, k) {
+    //         v['customer_code'] = "012" + "0000" + (k + 1);
+    //       })
     console.log(data.length);
     return data;
   })
@@ -67,7 +150,7 @@ results.then(dt => {
       if (err) {
         return console.log(err);
       }
-      console.log("The file was saved!");
+      console.log("The file is saved!");
     });
   })
 })

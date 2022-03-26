@@ -6,7 +6,7 @@ Run the project
 
 > bash first.sh
 
-enter the dc name 
+enter the dc name
 
 DcName
 
@@ -16,13 +16,10 @@ collectionName
 
 enter the start Date in YYYY-MM-DD format
 
-StartDate(YYYY-MM-DD) 
+StartDate(YYYY-MM-DD)
 
 enter the endDate in YYYY-MM-DD format
 
-EndDate(YYYY-MM-DD) 
+EndDate(YYYY-MM-DD)
 
 The file is saved!
-
-
-
