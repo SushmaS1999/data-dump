@@ -39,4 +39,4 @@ fi
 # exec node customers.js "./service_file/"${dcName}"/ServiceAccountKey.json" ${collectionName}  ${startDate} ${endDate} ${dcName} ./${destinationDirectory}"/items/"${collectionName}_${startDate}_${endDate}1.json
 # echo -ne '>>>>>>>>>>>>>>>>>>>>>>>>>>>>[100%]\r'
 # exec node items.js "./service_file/"${dcName}"/ServiceAccountKey.json" ${collectionName} ${dcName} "./${destinationDirectory}/${collectionName}.json"
-exec node order1.js "./service_file/"${dcName}"/ServiceAccountKey.json" ${collectionName} ${startDate} ${endDate} ${dcName} "./shilpa/${collectionName}_${startDate}_${endDate}.json"
+exec node orderCreatedAtWithMissingParamaters.js "./service_file/"${dcName}"/ServiceAccountKey.json" ${collectionName} ${startDate} ${endDate} ${dcName} "./shilpa/${collectionName}_${startDate}_${endDate}.json"
