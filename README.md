@@ -1,6 +1,11 @@
+Initalize the packages required for the project:
 
-hp@hp-HP-Z420-Workstation:~/Videos/data-dump$ atom .
-hp@hp-HP-Z420-Workstation:~/Videos/data-dump$ bash first.sh
+> npm i
+
+Run the project
+
+> bash first.sh
+
 enter the dc name 
 ANP
 enter the collection name
