@@ -7,13 +7,21 @@ Run the project
 > bash first.sh
 
 enter the dc name 
-ANP
+
+DcName
+
 enter the collection name
-orders
+
+collectionName
+
 enter the start Date in YYYY-MM-DD format
-2021-01-01  
+
+StartDate(YYYY-MM-DD) 
+
 enter the endDate in YYYY-MM-DD format
-2021-01-01
+
+EndDate(YYYY-MM-DD) 
+
 The file is saved!
 
 
