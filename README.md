@@ -1,4 +1,4 @@
-Initalize the packages required for the project:
+Install NPM packages:
 
 > npm i
 
